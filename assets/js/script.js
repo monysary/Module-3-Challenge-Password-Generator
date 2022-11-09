@@ -9,7 +9,18 @@ var specChar = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",
 
 // Password generation function
 function generatePassword() {
-  var passLength = prompt("How many characters do you want in your password?")
+  var passLength = prompt("How many characters do you want in your password?");
+
+  if (passLength < 8) {
+    alert("Your password must be at least 8 characters long. Please try again.")
+  } else {
+    var confLetterLow = confirm("Do you want your password to have lowercase letters?");
+    var confLetterUp = confirm("Do you want your password to have uppercase letters?");
+    var confNumber = confirm("Do you want your password to have numbers?");
+    var confSpecial = confirm("Do you want your password to have special characters?");
+
+  }
+
 }
 
 // Write password to the #password input
