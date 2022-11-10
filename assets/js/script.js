@@ -18,6 +18,7 @@ function generatePassword() {
   if (passLength < 8) {
     alert("Your password must be at least 8 characters long. Please try again.")
   } else {
+    // Prompts user for the type of characters used in the password
     var confLetterLow = confirm("Do you want your password to have lowercase letters?");
     if (confLetterLow) {passCharType = passCharType.concat(letterLowChar)};
     var confLetterUp = confirm("Do you want your password to have uppercase letters?");
@@ -28,7 +29,7 @@ function generatePassword() {
     if (confSpecial) {passCharType = passCharType.concat(specChar)}
   };
 
-  // Use for loop to concatenate characters into thePassword string
+  // Used for loop to concatenate characters into thePassword string
   for (var i = 0; i < passLength; i++) {
     thePassword = thePassword.concat(passCharType[Math.floor(Math.random() * passCharType.length)])
   };
@@ -43,7 +44,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
