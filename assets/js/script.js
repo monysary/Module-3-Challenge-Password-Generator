@@ -7,11 +7,12 @@ var letterUpChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 var numChar = ["0","1","2","3","4","5","6","7","8","9"];
 var specChar = [,"!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];  
 var passCharType = []
+var thePassword = ""
 
 // Password generation function
 function generatePassword() {
   var passLength = Number(prompt("How many characters do you want in your password?"));
-  var thePassword = ""
+  thePassword = ""
 
   // Checks to see if user input means minimum required password length
   if (passLength < 8) {
@@ -27,18 +28,18 @@ function generatePassword() {
     if (confSpecial) {passCharType = passCharType.concat(specChar)}
   };
 
+  // Use for loop to concatenate characters into thePassword string
   for (var i = 0; i < passLength; i++) {
     thePassword = thePassword.concat(passCharType[Math.floor(Math.random() * passCharType.length)])
   };
-
-  console.log(thePassword);
 
   return;
 }
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  generatePassword()
+  var password = thePassword
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
