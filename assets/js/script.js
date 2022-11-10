@@ -14,9 +14,10 @@ function generatePassword() {
   var passCharType = []
   thePassword = ""
 
-  // Checks to see if user input means minimum required password length
-  if (passLength < 8) {
-    alert("Your password must be at least 8 characters long. Please try again.")
+  // Checks to see if user input means minimum and maximum required password length
+  if (passLength < 8 || passLength > 128 ) {
+    alert("Your password must be at least 8 characters long and no more than 128 characters. Please try again.")
+    return;
   } else {
     // Prompts user for the type of characters used in the password
     var confLetterLow = confirm("Do you want your password to have lowercase letters?");
