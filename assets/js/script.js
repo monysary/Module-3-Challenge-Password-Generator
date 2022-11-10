@@ -20,14 +20,18 @@ function generatePassword() {
     return;
   } else {
     // Prompts user for the type of characters used in the password
-    var confLetterLow = confirm("Do you want your password to have lowercase letters?");
-    if (confLetterLow) {passCharType = passCharType.concat(letterLowChar)};
-    var confLetterUp = confirm("Do you want your password to have uppercase letters?");
-    if (confLetterUp) {passCharType = passCharType.concat(letterUpChar);}
-    var confNumber = confirm("Do you want your password to have numbers?");
-    if (confNumber) {passCharType = passCharType.concat(numChar)};
-    var confSpecial = confirm("Do you want your password to have special characters?");
-    if (confSpecial) {passCharType = passCharType.concat(specChar)}
+    if (confirm("Do you want your password to have lowercase letters?")) {
+      passCharType = passCharType.concat(letterLowChar)
+    };
+    if (confirm("Do you want your password to have uppercase letters?")) {
+      passCharType = passCharType.concat(letterUpChar);
+    }
+    if (confirm("Do you want your password to have numbers?")) {
+      passCharType = passCharType.concat(numChar)
+    };
+    if (confirm("Do you want your password to have special characters?")) {
+      passCharType = passCharType.concat(specChar)
+    };
   };
 
   // Checks if at least one character type was selected
@@ -40,6 +44,8 @@ function generatePassword() {
   for (var i = 0; i < passLength; i++) {
     thePassword = thePassword.concat(passCharType[Math.floor(Math.random() * passCharType.length)])
   };
+
+
 
   return;
 }
