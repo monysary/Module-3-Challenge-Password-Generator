@@ -30,6 +30,12 @@ function generatePassword() {
     if (confSpecial) {passCharType = passCharType.concat(specChar)}
   };
 
+  // Checks if at least one character type was selected
+  if (passCharType.length == 0) {
+    alert("You must select at least one character type. Please try again.");
+    return;
+  }
+
   // Used for loop to concatenate characters into thePassword string
   for (var i = 0; i < passLength; i++) {
     thePassword = thePassword.concat(passCharType[Math.floor(Math.random() * passCharType.length)])
