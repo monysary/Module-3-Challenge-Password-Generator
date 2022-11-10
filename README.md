@@ -6,7 +6,7 @@ This website features a password generator.
 
 ## Installation
 
-Load the webpage using Google Chrome via the following link: 
+Load the webpage using Google Chrome via the following link: https://monysary.github.io/Module-3-Challenge-Password-Generator/
 
 ## Usage
 
