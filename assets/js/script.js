@@ -11,7 +11,6 @@ var thePassword = "";
 // Password generation function
 function generatePassword() {
   var passLength = Number(prompt("How many characters do you want in your password?"));
-  var passCharType = [];
   var charTypeArr = [];
   thePassword = "";
 
@@ -22,29 +21,25 @@ function generatePassword() {
   } else {
     // Prompts user for the type of characters used in the password
     if (confirm("Do you want your password to have lowercase letters?")) {
-      passCharType = passCharType.concat(letterLowChar);
       charTypeArr.push(letterLowChar);
     };
     if (confirm("Do you want your password to have uppercase letters?")) {
-      passCharType = passCharType.concat(letterUpChar);
       charTypeArr.push(letterUpChar);
     }
     if (confirm("Do you want your password to have numbers?")) {
-      passCharType = passCharType.concat(numChar);
       charTypeArr.push(numChar);
     };
     if (confirm("Do you want your password to have special characters?")) {
-      passCharType = passCharType.concat(specChar);
       charTypeArr.push(specChar);
     };
   };
 
   // Checks if at least one character type was selected
-  if (passCharType.length == 0) {
+  if (charTypeArr.length == 0) {
     alert("You must select at least one character type. Please try again.");
   };
 
-  // Password generation logic, follows a pattern to ensure each selected character type is used once
+  // Password generation logic, follows a pattern to ensure each selected character type is used
   var loop = charTypeArr.length;
   loop--;
   for (var a = 0; a < passLength; a++) {
