@@ -14,9 +14,9 @@ function generatePassword() {
   var passCharType = []
   thePassword = ""
 
-  // Checks to see if user input means minimum and maximum required password length
-  if (passLength < 8 || passLength > 128 ) {
-    alert("Your password must be at least 8 characters long and no more than 128 characters. Please try again.")
+  // Checks to see if user input a number and meets minimum and maximum required password length
+  if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
+    alert("Please enter a number. Your password must be at least 8 characters long and no more than 128 characters. Please try again.")
     return;
   } else {
     // Prompts user for the type of characters used in the password
@@ -45,7 +45,8 @@ function generatePassword() {
     thePassword = thePassword.concat(passCharType[Math.floor(Math.random() * passCharType.length)])
   };
 
-
+  // Check if password meets character type criteria
+  
 
   return;
 }
